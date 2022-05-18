@@ -5,6 +5,7 @@ WORKDIR /usr/data
 COPY ./requirements.txt .
 
 COPY ./app app
+COPY ./tests tests
 
 RUN pip install -r requirements.txt
 EXPOSE 8000/tcp
