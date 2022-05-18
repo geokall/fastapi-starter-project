@@ -10,9 +10,19 @@ pipeline {
             steps {
 
                sh '''
+                    cp app/.env.example app/.env
 
-                    echo 'Clone'
+                    docker-compose down --volumes
 
+                    docker-compose up -d --build
+
+                    python3 -m venv favenv
+
+                    source favenv/bin/activate
+
+                    pip install -r requirements.txt
+
+                    pytest
                '''
 
             }
