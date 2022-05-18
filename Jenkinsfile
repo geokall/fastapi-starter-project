@@ -1,20 +1,39 @@
 pipeline {
+
     agent any
 
+
     stages {
+
         stage('clone') {
+
             steps {
-                sh '''
-                echo 'Clone'
-                '''
+
+               sh '''
+
+                    echo 'Clone'
+
+               '''
+
             }
+
         }
+
         stage('test') {
+
             steps {
+
                 sh '''
-                echo 'Test
+
+                    echo 'Test'
+
                 '''
+
             }
+
         }
+
     }
+
+
 }
